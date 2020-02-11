@@ -22,23 +22,23 @@ public class Board implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 기본키 생성을 데이터베이스에 위임한다., auto_increment
     private Long idx;
 
-    @Column
+    @Column(name = "title")
     private String title;
 
-    @Column
+    @Column(name = "subTitle")
     private String subTitle;
 
-    @Column
+    @Column(name = "content")
     private String content;
 
-    @Column
+    @Column(name = "boardType")
     @Enumerated(EnumType.STRING) // enum의 이름을 디비에 저장
     private BoardType boardType;
 
-    @Column
+    @Column(name = "createdDate")
     private LocalDateTime createdDate;
 
-    @Column
+    @Column(name = "updatedDate")
     private LocalDateTime updatedDate;
 
     @OneToOne(fetch = FetchType.LAZY)

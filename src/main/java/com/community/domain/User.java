@@ -20,20 +20,20 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name = "password")
     private String password;
 
-    @Column
+    @Column(name = "email")
     private String email;
 
-    @Column
+    @Column(name = "userType")
     @Enumerated(EnumType.STRING)
     private UserType userType;
 
-    @Column
+    @Column(name = "createdDate")
     private LocalDateTime createdDate;
 
 
