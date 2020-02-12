@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -24,6 +25,12 @@ public class UserRestController {
     @GetMapping
     public ResponseEntity<?> getAllUser() {
         List<User> user = userRepository.findAll();
+        return ResponseEntity.ok(user);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getOneUser(@PathVariable("id") Long id ) {
+        Optional<User> user = userRepository.findById(id);
         return ResponseEntity.ok(user);
     }
 

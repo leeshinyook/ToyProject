@@ -62,6 +62,13 @@ public class UserApiTest {
                 .andDo(print())
                 .andExpect(status().isOk());
     }
+    @Test
+    public void GET_ONE_USER() throws Exception {
+        mockMvc.perform(get("/api/users/1")
+                .contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andDo(print())
+                .andExpect(status().isOk());
+    }
 
 
 }

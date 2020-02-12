@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/boards")
@@ -25,9 +26,9 @@ public class BoardRestController {
         return ResponseEntity.ok(board);
     }
 
-    @GetMapping("/{idx}")
-    public ResponseEntity<?> getOneBoard(@PathVariable("idx") Long idx) {
-        Board board = boardRepository.getOne(idx);
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getOneBoard(@PathVariable("id") Long id) {
+        Optional<Board> board = boardRepository.findById(id);
         return ResponseEntity.ok(board);
     }
 
@@ -38,8 +39,8 @@ public class BoardRestController {
         return new ResponseEntity<>("{}", HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/{idx}")
-    public ResponseEntity<?> deleteBoard(@PathVariable("idx") Long idx) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteBoard(@PathVariable("id") Long idx) {
         Board board = boardRepository.getOne(idx);
         boardRepository.delete(board);
         return new ResponseEntity<>("{}", HttpStatus.OK);

@@ -22,7 +22,7 @@ public class Board implements Serializable {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 기본키 생성을 데이터베이스에 위임한다., auto_increment
-    private Long idx;
+    private Long id;
 
     @Column(name = "title")
     private String title;
