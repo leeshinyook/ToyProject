@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <div>
+      <br>
       <h1>Registration</h1>
+      <br>
     </div>
     <b-form>
       <b-form-group
@@ -72,6 +74,6 @@ export default {
 
 <style scoped>
 .container {
-  width: 700px;
+  width: 500px;
 }
 </style>

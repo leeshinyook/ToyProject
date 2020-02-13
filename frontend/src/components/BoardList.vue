@@ -1,8 +1,10 @@
 <template>
   <div class="container">
+    <br>
     <div class="title">
       <h1>Board</h1>
     </div>
+    <br>
     <div v-if="!write_board">
       <b-table striped hover :items="boardList"></b-table>
     </div>
@@ -15,6 +17,7 @@
     <div v-if="write_board">
       <div>
         <b-form-input v-model="board.title" placeholder="Title"></b-form-input>
+        <br>
         <b-form-input
           v-model="board.subTitle"
           placeholder="subTitle"
