@@ -1,6 +1,6 @@
 package com.community.domain.enums;
 
-public enum BoardType {
+public enum  BoardType {
     notice("공지사항"),
     free("자유게시판");
 
